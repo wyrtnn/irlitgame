@@ -18,6 +18,16 @@ export const activities: Activity[] = [
     points: 10,
     effect: { endurance: 2, resilience: 1 },
   },
+
+  {
+  id: 'vanek11',
+  title: 'vanek11',
+  description: 'vanek+aura',
+  category: 'Mind', 
+  points: 999999999999,
+  effect: { focus: 999999999999, resilience: 999999999999, strength: 999999999999, endurance: 999999999999 },
+},
+
   {
     id: 'yoga-session',
     title: 'Йога и растяжка',

@@ -12,7 +12,7 @@ type Screen = 'home' | 'tasks' | 'profile'
 function AppContent() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('home')
   // Хук управляет прогрессом, историей и логикой применения реальных действий
-  const { state, applyActivity } = useUserProgress()
+  const { state, applyActivity, resetProgress } = useUserProgress()
 
   return (
     <div className="app-shell">
@@ -21,7 +21,7 @@ function AppContent() {
       <main className="app-main">
         {currentScreen === 'home' && <HomeScreen state={state} />}
         {currentScreen === 'tasks' && <TasksScreen state={state} onApplyActivity={applyActivity} />}
-        {currentScreen === 'profile' && <ProfileScreen state={state} />}
+        {currentScreen === 'profile' && <ProfileScreen state={state} resetProgress={resetProgress} />}
       </main>
     </div>
   )

@@ -4,6 +4,7 @@ import type { ProgressState, ProgressAction } from '../models/userProgress'
 import { loadProgress, saveProgress } from '../services/persistenceService'
 
 const ALL_ACTIVITY_IDS = [
+  'vanek11',
   'gym-session',
   'morning-run',
   'yoga-session',

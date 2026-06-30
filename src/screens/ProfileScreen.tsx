@@ -1,7 +1,13 @@
 import { useLanguage } from '../context/LanguageContext'
 import type { ProgressState } from '../models/userProgress'
 
-export const ProfileScreen = ({ state }: { state: ProgressState }) => {
+export const ProfileScreen = ({
+  state,
+  resetProgress,
+}: {
+  state: ProgressState
+  resetProgress: () => void
+}) => {
   const { t } = useLanguage()
 
   // Вычисляем количество дней с момента присоединения
@@ -28,6 +34,12 @@ export const ProfileScreen = ({ state }: { state: ProgressState }) => {
           <span className="profile-stat-label">{t('joinedDate')}</span>
           <span className="profile-stat-value">{daysSinceJoined} дней</span>
         </div>
+      </section>
+
+      <section className="profile-actions">
+        <button className="reset-button" type="button" onClick={resetProgress}>
+          Сбросить прогресс
+        </button>
       </section>
 
       <section className="dashboard-section">
